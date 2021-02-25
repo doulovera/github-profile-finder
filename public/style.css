@@ -62,11 +62,17 @@ input#search-bar:focus {
 
 button#search-btn {
     background-color: #238636;
-    border: 0;
+    border: 1px solid #2ea043;
     color: #F0F6FC;
     margin: 0;
     outline: none;
     padding: var(--search-padding);    
+}
+
+button#search-btn:hover {
+    background-color: #2ea043;
+    border: 1px solid #3fb950;
+    cursor: pointer;
 }
 
 /* Box */

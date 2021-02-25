@@ -7,17 +7,11 @@ const information = async() => {
     infoBox.innerHTML = '<img src="https://s2.svgbox.net/loaders.svg?ic=spinner&color=a1a1a1" width="32" height="32">';
     let infoBoxData;
     
-    const data = await fetch(`https://api.github.com/users/${search.value}`, {
-        headers: {
-            authorization: "token 6c7c273e6fa5df1f981396a949df03ae0de41126"
-        }
-    })
+    const data = await fetch(`https://api.github.com/users/${search.value}`)
     .then(res => res.json())
     
     if(data.message) {
-
         infoBoxData = '<h1>Usuario inexistente</h1>';
-
     } else {
 
         let ghLink;        
