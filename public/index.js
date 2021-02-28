@@ -3,10 +3,12 @@ const searchBtn = document.getElementById('search-btn');
 const infoBox = document.getElementById('box');
 
 const information = async() => {
+    if(search.value.trim() === '') return;
     
     infoBox.innerHTML = '<img src="https://s2.svgbox.net/loaders.svg?ic=spinner&color=a1a1a1" width="32" height="32">';
     let infoBoxData;
     
+
     const data = await fetch(`https://api.github.com/users/${search.value}`)
     .then(res => res.json())
     
@@ -32,12 +34,16 @@ const information = async() => {
                 <p class="biography">${data.bio ?? ''}</p>
                 <div id="links">
                     ${data.blog ? `<a class="link" href="${ghLink ?? ''}" target="_blank"><i class="fas fa-link"></i> ${ghLink ?? ''}<i class="fas fa-external-link-alt"></i></a>` : ''}
-                    ${data.twitter_username ? `<a href="https://www.twitter.com/${data.twitter_username}" target="_blank"><i class="fab fa-twitter"></i> ${data.twitter_username}</a>` : ''}
+                    ${data.twitter_username ? `<a href="https://www.twitter.com/${data.twitter_username}" target="_blank"><i class="fab fa-twitter"></i> ${data.twitter_username}<i class="fas fa-external-link-alt"></i></a>` : ''}
                 </div>
                 <hr/>
                 <div id="follow">
-                    <p><i class="fas fa-user-friends"></i> <span class="special-span">${data.followers}</span> Followers</p>                    
-                    <p><i class="fas fa-user-check"></i> <span class="special-span">${data.following}</span> Following</p>
+                    ${
+                        data.type === 'Organization' ? '<span id="type_organization">Organization</span>' : `
+                        <p><i class="fas fa-user-friends"></i> <span class="special-span">${data.followers}</span> Followers</p>                    
+                        <p><i class="fas fa-user-check"></i> <span class="special-span">${data.following}</span> Following</p>
+                        `
+                    }
                 </div>
                 <div id="public">
                     <p><i class="fas fa-book"></i> <span class="special-span">${data.public_repos}</span> Repositories</p>

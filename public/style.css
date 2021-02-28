@@ -77,13 +77,13 @@ button#search-btn:hover {
 
 /* Box */
 #box {
-    border: 1px solid var(--sub-color);
-    border-radius: 6px;
     margin: auto;
     max-width: 45em;
 }
 
 #info {
+    border: 1px solid var(--sub-color);
+    border-radius: 6px;
     text-align: left;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -127,7 +127,7 @@ a:hover > i.fa-external-link-alt {
     font-weight: lighter;
 }
 
-#info .hireable {
+#info .hireable, #info #type_organization {
     background-color: var(--secondary-color);
     border-radius: 6px;
     padding: 5px;
