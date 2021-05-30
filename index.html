@@ -16,19 +16,21 @@
 </head>
 <body>
     <nav>
-        <h1>Github Profile Finder <i class="fab fa-github"></i></h1>
+        <h1 class="navbar__title">Github Profile Finder <i class="fab fa-github"></i></h1>
     </nav>
 
     <main id="search">
-        <label for="search-bar"></label>
-            <input id="search-bar" type="text" placeholder="Search by username" autofocus>
-        </label>
-        <button id="search-btn" onclick="information()">
-            <i class="fas fa-search"></i>
-        </button>
-    </main>
+        <section class="main__search">
+            <div class="main__search-container">
+                <input class="main__search-bar" id="search-bar" type="text" placeholder="Search by username" autofocus>
+                <button class="main__search-button" id="search-button" onclick="information()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </section>
 
-    <div id="box"></div>
+        <section class="main__box" id="box"></section>
+    </main>
 
     <!-- Loading icon: https://github.com/shubhamjain/svg-loader -->
     <script src="public/index.js"></script>
