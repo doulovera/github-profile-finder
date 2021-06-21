@@ -30,6 +30,7 @@ const information = async () => {
                   data.avatar_url ?? ""
                 }" alt="${data.name ?? ""}" />
             </div>
+            
 
             <div class="main__box__data-container">
                 <h3 id="main__box__data-name">
