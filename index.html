@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github Profile Finder</title>
-    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./public/style.css">
-    <!-- Other styles -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,700;1,200;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" />
-    <!-- Meta tags -->
-    <meta property="og:title" content="Github Profile Finder">
-    <meta property="og:description" content="Made by Douglas Lovera \nhttps://twitter.com/doulovera">
-</head>
-<body>
-    <nav>
-        <h1>Github Profile Finder <i class="fab fa-github"></i></h1>
-    </nav>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./public/styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,700;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <meta property="og:title" content="Github Profile Finder" />
+    <meta
+      property="og:description"
+      content="Made by Douglas Lovera \nhttps://twitter.com/doulovera"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Github Profile Finder <i class="fab fa-github"></i></h1>
+    </header>
 
     <main id="search">
-        <label for="search-bar"></label>
-            <input id="search-bar" type="text" placeholder="Search by username" autofocus>
-        </label>
-        <button id="search-btn" onclick="information()">
-            <i class="fas fa-search"></i>
+      <form id="search-form">
+        <input
+          class="form__input"
+          id="search-input"
+          type="text"
+          placeholder="Search by username"
+          autofocus
+        />
+        <button class="form__button">
+          <i class="fas fa-search"></i>
         </button>
+      </form>
+
+      <div id="box"></div>
     </main>
 
-    <div id="box"></div>
-
     <!-- Loading icon: https://github.com/shubhamjain/svg-loader -->
-    <script src="public/index.js"></script>
-</body>
+    <script src="public/js/index.js" type="module"></script>
+  </body>
 </html>
