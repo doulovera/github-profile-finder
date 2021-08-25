@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "KarlaSlim";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/karla-v15-latin-300.woff2") format("woff2"),
+    url("../assets/fonts/karla-v15-latin-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/karla-v15-latin-regular.woff2") format("woff2"),
+    url("../assets/fonts/karla-v15-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "KarlaBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/karla-v15-latin-700.woff2") format("woff2"),
+    url("../assets/fonts/karla-v15-latin-700.woff") format("woff");
+}
+
+:root {
+  --search-padding: 10px;
+  --color-bg: #0d1117;
+  --color-light: #30363d;
+  --color-secondary: #161b22;
+  --color-font-primary: #f0f6fc;
+  --color-font-secondary: #c9d1d9;
+  --color-font-anchor: #58a6ff;
+}
+
+* {
+  /* outline: 1px solid red !important; */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: "Karla", sans-serif;
+  text-align: center;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: var(--color-secondary);
+  color: var(--color-font-primary);
+}
+
+.navbar__title {
+  padding: 15px;
+  font-size: 2.6rem;
+  font-family: "KarlaBold", sans-serif;
+}
+
+main {
+  height: auto;
+}
+
+.main__search {
+  min-width: 320px;
+  width: 100%;
+  height: 100px;
+  margin-top: 70px;
+}
+
+.main__search-container {
+  margin: 0 auto;
+}
+
+.main__search-bar {
+  width: 60%;
+  max-width: 350px;
+  height: 35px;
+  margin-right: -5px;
+  padding: 0 15px;
+  background-color: var(--color-secondary);
+  border: 1px solid #000;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  color: var(--color-font-primary);
+  font-size: 1.6rem;
+}
+
+.main__search-bar:hover {
+  border: 1px solid #80bbff;
+}
+
+.main__search-bar:focus {
+  border: 1px solid var(--color-font-anchor);
+}
+
+.main__search-button {
+  width: 35px;
+  height: 35px;
+  background-color: #238636;
+  border-radius: 0 6px 6px 0;
+  border: 1px solid #2ea043;
+  font-size: 1.6rem;
+  color: var(--color-font-primary);
+}
+
+.main__search-button:hover {
+  background-color: #2ea043;
+  border: 1px solid #3fb950;
+  cursor: pointer;
+}
