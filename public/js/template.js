@@ -14,10 +14,36 @@ export default function Template({
   followers,
   followings,
   created_at,
+  notFoundError,
 }) {
+  if (notFoundError) return `<h1>${notFoundError}</h1>`;
+
+  const validateHttpInLink =
+    blog &&
+    `${`<a href="${
+      !blog.startsWith("http") ? `http://${blog}` : blog
+    }" target="_blank" rel="noreferrer"><i class="fas fa-link"></i></a>`}`;
+
   return /*html*/ `
-    <h1>${login}</h1>
-    <h1>${bio}</h1>
+    <div class="profile__container">
+      <div class="profile__avatar">
+        <img src="${avatar_url}" alt="${login}'s avatar" />
+      </div>
+      <div class="profile__info">
+        <div class="profile__name">
+          <h2>${name || ""}</h2>
+          <h4>${login}</h4>
+        </div>
+        <div className="profile__links">
+          <span>${validateHttpInLink || ""}</span>
+          <span>${
+            twitter_username
+              ? `<a href="https://twitter.com/${twitter_username}" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>`
+              : ""
+          }</span>
+        </div>
+      </div>
+    </div>
   `;
 }
 
