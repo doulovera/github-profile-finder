@@ -6,13 +6,12 @@ export default function Template({
   type,
   name,
   blog,
-  location,
   hireable,
   bio,
   twitter_username,
   public_repos,
   followers,
-  followings,
+  following,
   created_at,
   notFoundError,
 }) {
@@ -29,18 +28,47 @@ export default function Template({
       <div class="profile__avatar">
         <img src="${avatar_url}" alt="${login}'s avatar" />
       </div>
+
+      <div class="profile__flags">
+        ${hireable ? "<small>💼 Hireable</small>" : ""}
+        ${type === "Organization" ? "<small>🏢 Organization</small>" : ""}
+      </div>
+
+      <div class="profile__links">
+          ${`<span>${validateHttpInLink}</span>` || ""}
+          ${
+            twitter_username
+              ? `<span><a href="https://twitter.com/${twitter_username}" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a></span>`
+              : ""
+          }
+        </div>
+
       <div class="profile__info">
         <div class="profile__name">
           <h2>${name || ""}</h2>
-          <h4>${login}</h4>
+          <h4><a href="${html_url}" target="_blank" rel="noreferrer">${login}</a></h4>
+          ${bio ? `<p>"${bio}"</p>` : ""}
         </div>
-        <div className="profile__links">
-          <span>${validateHttpInLink || ""}</span>
-          <span>${
-            twitter_username
-              ? `<a href="https://twitter.com/${twitter_username}" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>`
-              : ""
-          }</span>
+        
+        <div class="profile__info-cards__container">
+          <div class="profile__info-card">
+            <span class="info_number">
+              ${public_repos}
+            </span>
+            <p>Public Repos</p>
+          </div>
+          <div class="profile__info-card">
+            <span class="info_number">
+              ${followers}
+            </span>
+            <p>Followers</p>
+          </div>
+          <div class="profile__info-card">
+            <span class="info_number">
+              ${following}
+            </span>
+            <p>Following</p>
+          </div>
         </div>
       </div>
     </div>

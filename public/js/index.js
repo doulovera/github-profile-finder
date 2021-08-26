@@ -10,7 +10,7 @@ const tempInfo = {
   login: "doulovera",
   id: 42481580,
   node_id: "MDQ6VXNlcjQyNDgxNTgw",
-  // avatar_url: "https://avatars.githubusercontent.com/u/42481580?v=4",
+  avatar_url: "https://avatars.githubusercontent.com/u/42481580?v=4",
   gravatar_id: "",
   url: "https://api.github.com/users/doulovera",
   html_url: "https://github.com/doulovera",
@@ -46,15 +46,15 @@ const handleSubmit = async ({ event }) => {
   event.preventDefault();
   // Checks if the input is empty
   if (Input.value.trim() === "") return;
+
   // Receive the data
+  const receivedData = await fetch(`${BASE_URL}/${Input.value}`) // prettier-ignore
+    .then((response) => {
+      if (response.status === 404) return { notFoundError: "Profile not found" }; //prettier-ignore
+      return response.json();
+    });
 
-  // const receivedData = await fetch(`${BASE_URL}/${Input.value}`) // prettier-ignore
-  //   .then((response) => {
-  //     if (response.status === 404) return { notFoundError: "Profile not found" }; //prettier-ignore
-  //     return response.json();
-  //   });
-
-  ProfileBox.innerHTML = Template({ ...tempInfo });
+  ProfileBox.innerHTML = Template({ ...receivedData });
 
   /*
   infoBox.innerHTML =

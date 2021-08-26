@@ -30,12 +30,6 @@ a:hover {
   color: #58a6ff;
   text-decoration: underline;
 }
-a > i.fa-external-link-alt {
-  visibility: hidden;
-}
-a:hover > i.fa-external-link-alt {
-  visibility: visible;
-}
 
 header {
   display: block;
@@ -93,8 +87,8 @@ form {
 
 .profile__container {
   position: relative;
-  max-width: 500px;
-  width: 80%;
+  max-width: 425px;
+  width: 95%;
   min-width: 200px;
   height: auto;
   min-height: 300px;
@@ -106,30 +100,78 @@ form {
 
 .profile__avatar {
   position: absolute;
-  top: -80px;
+  top: -68px;
   left: 0;
   right: 0;
 }
-
 .profile__avatar img {
   display: block;
   margin: 0 auto;
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   padding: 2px;
   border: 2px solid var(--b-color);
   background-color: var(--primary);
   border-radius: 50%;
 }
 
-.profile__info {
-  margin: 90px 0;
+.profile__links {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  font-size: 1.2rem;
+}
+.profile__links span a {
+  padding: 3px 5px;
+  background-color: var(--secondary);
+  border-radius: 6px;
 }
 
-.profile__info h2 {
+.profile__flags {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+.profile__flags small {
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: var(--secondary);
+  border-radius: 6px;
+}
+
+.profile__info {
+  margin: 80px 0;
+}
+
+.profile__name h2 {
+  font-size: 1.6rem;
+}
+.profile__name h4 {
   font-size: 1.4rem;
 }
-.profile__info h4 {
-  font-size: 1rem;
+.profile__name h4 a {
   color: #9fa6ad;
+}
+.profile__name p {
+  max-width: 250px;
+  margin: 15px auto 0;
+  padding: 0 10px;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.profile__info-cards__container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 340px;
+  margin: 30px auto 0;
+  /* border-top: 1px solid var(--b-color); */
+}
+
+.profile__info-card {
+  width: 90px;
+  height: 100px;
+  margin: 10px auto;
+  background-color: var(--secondary);
 }
