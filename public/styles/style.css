@@ -34,6 +34,7 @@ a:hover {
 header {
   display: block;
   height: auto;
+  min-width: 300px;
   background-color: var(--secondary);
 }
 
@@ -45,8 +46,9 @@ header h1 {
 form {
   display: flex;
   height: 40px;
-  width: 80%;
   max-width: 300px;
+  width: 80%;
+  min-width: 240px;
   margin: 50px auto;
 }
 
@@ -89,10 +91,11 @@ form {
   position: relative;
   max-width: 425px;
   width: 95%;
-  min-width: 200px;
+  min-width: 300px;
   height: auto;
   min-height: 300px;
   margin: 120px auto 0;
+  padding-bottom: 30px;
   background-color: var(--primary);
   border-radius: 6px 6px 0 0;
   border: 1px solid var(--b-color);
@@ -107,8 +110,10 @@ form {
 .profile__avatar img {
   display: block;
   margin: 0 auto;
-  height: 120px;
-  width: 120px;
+  max-height: 140px;
+  height: 40%;
+  max-width: 140px;
+  width: 40%;
   padding: 2px;
   border: 2px solid var(--b-color);
   background-color: var(--primary);
@@ -131,6 +136,7 @@ form {
   position: absolute;
   top: 15px;
   right: 5px;
+  z-index: 10;
 }
 .profile__flags small {
   padding: 8px 10px;
@@ -141,7 +147,7 @@ form {
 }
 
 .profile__info {
-  margin: 80px 0;
+  margin: 80px 0 0;
 }
 
 .profile__name h2 {
@@ -166,12 +172,34 @@ form {
   justify-content: space-between;
   max-width: 340px;
   margin: 30px auto 0;
-  /* border-top: 1px solid var(--b-color); */
 }
 
 .profile__info-card {
-  width: 90px;
+  width: 85px;
   height: 100px;
   margin: 10px auto;
   background-color: var(--secondary);
+  border: 1px solid var(--b-color);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.profile__info-card h4 {
+  padding: 25% 0;
+  font-size: 1.4rem;
+}
+
+.profile__info-card p {
+  font-size: 1rem;
+}
+
+.box__footer {
+  max-width: 425px;
+  width: 95%;
+  min-width: 300px;
+  margin: 0 auto 30px;
+  background-color: var(--secondary);
+  border: 1px solid var(--b-color);
+  border-radius: 0 0 6px 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
 }

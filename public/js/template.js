@@ -52,87 +52,28 @@ export default function Template({
         
         <div class="profile__info-cards__container">
           <div class="profile__info-card">
-            <span class="info_number">
+            <h4 class="info_number">
               ${public_repos}
-            </span>
-            <p>Public Repos</p>
+            </h4>
+            <p>Repos</p>
           </div>
           <div class="profile__info-card">
-            <span class="info_number">
+            <h4 class="info_number">
               ${followers}
-            </span>
+            </h4>
             <p>Followers</p>
           </div>
           <div class="profile__info-card">
-            <span class="info_number">
+            <h4 class="info_number">
               ${following}
-            </span>
+            </h4>
             <p>Following</p>
           </div>
         </div>
       </div>
     </div>
+    <div class="box__footer">
+			<p>ID: ${id}</p>
+    </div>
   `;
 }
-
-/*
-<div id="info">
-            <div class="column">
-                <img class="img-url" src="${data.avatar_url ?? ""}" alt="${
-      data.name ?? ""
-    }" />
-            </div>
-            <div class="column">
-                <h2 id="gh-titles">
-                    <span><a class="name" href="${
-                      data.html_url ?? ""
-                    }" target="_blank">${
-      data.name ?? ""
-    }<i class="fas fa-external-link-alt"></i></a></span>
-                    <span class="username">${data.login ?? ""} ${
-      data.hireable ? '<small class="hireable">hireable</small>' : ""
-    }</span>
-                </h2>
-                <p class="biography">${data.bio ?? ""}</p>
-                <div id="links">
-                    ${
-                      data.blog
-                        ? `<a class="link" href="${
-                            ghLink ?? ""
-                          }" target="_blank"><i class="fas fa-link"></i> ${
-                            ghLink ?? ""
-                          }<i class="fas fa-external-link-alt"></i></a>`
-                        : ""
-                    }
-                    ${
-                      data.twitter_username
-                        ? `<a href="https://www.twitter.com/${data.twitter_username}" target="_blank"><i class="fab fa-twitter"></i> ${data.twitter_username}<i class="fas fa-external-link-alt"></i></a>`
-                        : ""
-                    }
-                </div>
-                <hr/>
-                <div id="follow">
-                    ${
-                      data.type === "Organization"
-                        ? '<span id="type_organization">Organization</span>'
-                        : `
-                        <p><i class="fas fa-user-friends"></i> <span class="special-span">${data.followers}</span> Followers</p>                    
-                        <p><i class="fas fa-user-check"></i> <span class="special-span">${data.following}</span> Following</p>
-                        `
-                    }
-                </div>
-                <div id="public">
-                    <p><i class="fas fa-book"></i> <span class="special-span">${
-                      data.public_repos
-                    }</span> Repositories</p>
-                    <p><i class="fas fa-edit"></i> ${new Date(
-                      data.created_at
-                    ).toLocaleDateString()}</p>
-                </div>
-            </div>
-        </div>
-        <div id="info-footer">
-            ID: ${data.id}
-        </div>
-
-*/
